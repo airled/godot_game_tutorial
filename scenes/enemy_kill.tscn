@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cqvu3r8081b4p"]
 
-[ext_resource type="Script" uid="uid://rd84ilucdglq" path="res://scripts/purple_enemy.gd" id="1_dc70f"]
+[ext_resource type="Script" uid="uid://rd84ilucdglq" path="res://scripts/enemy_kill.gd" id="1_dc70f"]
 [ext_resource type="Texture2D" uid="uid://cerdgc0m6umok" path="res://assets/sprites/slime_purple.png" id="1_s3bxd"]
-[ext_resource type="PackedScene" uid="uid://d0nyfuovrwdat" path="res://scenes/killzone.tscn" id="2_dc70f"]
+[ext_resource type="PackedScene" uid="uid://d0nyfuovrwdat" path="res://scenes/kill_zone.tscn" id="2_dc70f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jystl"]
 atlas = ExtResource("1_s3bxd")
@@ -40,10 +40,14 @@ animations = [{
 "speed": 15.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_cs4l5"]
-radius = 6.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iowxr"]
+size = Vector2(10, 1)
 
-[node name="purple_enemy" type="Node2D" unique_id=1330670059]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cs4l5"]
+size = Vector2(11.5, 10.25)
+
+[node name="EnemyKill" type="AnimatableBody2D" unique_id=1742839249]
+collision_layer = 64
 script = ExtResource("1_dc70f")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=447207408]
@@ -52,18 +56,22 @@ sprite_frames = SubResource("SpriteFrames_cs4l5")
 autoplay = "default"
 frame_progress = 0.960616
 
-[node name="killzone" parent="." unique_id=968807247 instance=ExtResource("2_dc70f")]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=728416996]
+position = Vector2(0, -12)
+shape = SubResource("RectangleShape2D_iowxr")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=1027129871]
-position = Vector2(0, -7)
-shape = SubResource("CircleShape2D_cs4l5")
+[node name="KillZone" parent="." unique_id=968807247 instance=ExtResource("2_dc70f")]
 
-[node name="raycast_left" type="RayCast2D" parent="." unique_id=1018730759]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone" unique_id=1816027062]
+position = Vector2(0, -5.125)
+shape = SubResource("RectangleShape2D_cs4l5")
+
+[node name="RaycastLeft" type="RayCast2D" parent="." unique_id=1018730759]
 position = Vector2(0, -7)
 target_position = Vector2(-7, 0)
 collision_mask = 2
 
-[node name="raycast_right" type="RayCast2D" parent="." unique_id=597499233]
+[node name="RaycastRight" type="RayCast2D" parent="." unique_id=597499233]
 position = Vector2(0, -7)
 target_position = Vector2(7, 0)
 collision_mask = 2

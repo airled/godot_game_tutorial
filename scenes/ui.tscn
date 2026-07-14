@@ -6,29 +6,29 @@
 atlas = ExtResource("1_nt7q6")
 region = Rect2(16.999363, 49.014633, 30.040928, 7.8082886)
 
-[node name="ui" type="CanvasLayer" unique_id=1164685464]
+[node name="UI" type="CanvasLayer" unique_id=1164685464]
 
-[node name="coins" type="Label" parent="." unique_id=1275673658]
+[node name="Coins" type="Label" parent="." unique_id=1275673658]
 offset_left = 572.0
 offset_top = 16.0
 offset_right = 633.0
 offset_bottom = 39.0
 text = "Coins: 0"
 
-[node name="Sprite2D" type="Sprite2D" parent="coins" unique_id=908112309]
+[node name="CoinsUnderline" type="Sprite2D" parent="Coins" unique_id=908112309]
 texture_filter = 1
 position = Vector2(-366, 29)
 scale = Vector2(2.0333333, 1)
 texture = SubResource("AtlasTexture_cs4l5")
 
-[node name="hp" type="Label" parent="." unique_id=1522092966]
+[node name="HP" type="Label" parent="." unique_id=1522092966]
 offset_left = 177.0
 offset_top = 20.0
 offset_right = 235.0
 offset_bottom = 43.0
 text = "HP: 100"
 
-[node name="Sprite2D3" type="Sprite2D" parent="hp" unique_id=45076478]
+[node name="HpUnderline" type="Sprite2D" parent="HP" unique_id=45076478]
 texture_filter = 1
 position = Vector2(425, 21)
 scale = Vector2(2.0333333, 1)

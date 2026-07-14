@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cdg0qlehra61a"]
+
+[ext_resource type="Texture2D" uid="uid://bptwfapq0sob4" path="res://assets/sprites/world_tileset.png" id="1_5nbog"]
+[ext_resource type="Script" uid="uid://cr2jqv64mkhx1" path="res://scripts/finish.gd" id="1_07gpw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cs4l5"]
+atlas = ExtResource("1_5nbog")
+region = Rect2(129.04631, 66.41008, 14.112061, 13.691986)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cs4l5"]
+radius = 7.0
+
+[node name="Finish" type="Area2D" unique_id=310057435]
+collision_layer = 2
+script = ExtResource("1_07gpw")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1759626957]
+texture_filter = 1
+texture = SubResource("AtlasTexture_cs4l5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=354608177]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_cs4l5")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

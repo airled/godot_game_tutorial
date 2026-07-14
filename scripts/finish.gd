@@ -2,8 +2,5 @@ extends Area2D
 
 @onready var manager: Node = get_tree().current_scene.get_node("Manager")
 
-const FRUIT_HP = 20
-
 func _on_body_entered(body: Node2D) -> void:
-	manager.add_health(FRUIT_HP)
-	queue_free()
+	manager.load_next_level()

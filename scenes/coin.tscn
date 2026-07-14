@@ -128,7 +128,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("pickup:playing")
+tracks/2/path = NodePath("Pickup:playing")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -157,7 +157,8 @@ _data = {
 &"pickup": SubResource("Animation_11l1o")
 }
 
-[node name="coin" type="Area2D" unique_id=755387068]
+[node name="Coin" type="Area2D" unique_id=755387068]
+collision_layer = 8
 script = ExtResource("1_i64fm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1340936664]
@@ -169,7 +170,7 @@ autoplay = "default"
 position = Vector2(0, -5)
 shape = SubResource("CircleShape2D_11l1o")
 
-[node name="pickup" type="AudioStreamPlayer2D" parent="." unique_id=1358429636]
+[node name="Pickup" type="AudioStreamPlayer2D" parent="." unique_id=1358429636]
 stream = ExtResource("3_11l1o")
 volume_db = -19.5
 

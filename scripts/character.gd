@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@onready var game_manager: Node = get_tree().current_scene.get_node("manager")
+@onready var manager: Node = get_tree().current_scene.get_node("Manager")
 @onready var char_animation: AnimatedSprite2D = $AnimatedSprite2D
 
 const DAMAGE_PER_SEC = 40
@@ -19,7 +19,7 @@ func stop_being_damaged():
 func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("move_left", "move_right")
 	if being_damaged:
-		game_manager.reduce_health(DAMAGE_PER_SEC * delta)
+		manager.reduce_health(DAMAGE_PER_SEC * delta)
 
 	# animation
 	if being_damaged:

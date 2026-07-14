@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://tuv27bqmm1bd"]
 
 [ext_resource type="Texture2D" uid="uid://c1jff2nvrs14p" path="res://assets/sprites/slime_green.png" id="1_7p1mj"]
-[ext_resource type="PackedScene" uid="uid://bqgp0k4cggj1i" path="res://scenes/damagezone.tscn" id="2_8d6nc"]
+[ext_resource type="PackedScene" uid="uid://bqgp0k4cggj1i" path="res://scenes/damage_zone.tscn" id="2_8d6nc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7p1mj"]
 atlas = ExtResource("1_7p1mj")
@@ -39,10 +39,14 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_iowxr"]
-radius = 4.1231055
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cx2dv"]
+size = Vector2(12, 0.5)
 
-[node name="green_enemy" type="Node2D" unique_id=59492022]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iowxr"]
+size = Vector2(14, 11)
+
+[node name="EnemyDamage" type="AnimatableBody2D" unique_id=805219882]
+collision_layer = 64
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1511181131]
 position = Vector2(0, -9)
@@ -51,8 +55,12 @@ animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.66056883
 
-[node name="damagezone" parent="." unique_id=1607984370 instance=ExtResource("2_8d6nc")]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1924148916]
+position = Vector2(0, -11.75)
+shape = SubResource("RectangleShape2D_cx2dv")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="damagezone" unique_id=194084681]
-position = Vector2(0, -6)
-shape = SubResource("CircleShape2D_iowxr")
+[node name="DamageZone" parent="." unique_id=1607984370 instance=ExtResource("2_8d6nc")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageZone" unique_id=1556982433]
+position = Vector2(0, -5.5)
+shape = SubResource("RectangleShape2D_iowxr")
