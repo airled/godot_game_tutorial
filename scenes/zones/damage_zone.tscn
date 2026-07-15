@@ -1,10 +1,15 @@
 [gd_scene format=3 uid="uid://bqgp0k4cggj1i"]
 
 [ext_resource type="Script" uid="uid://b35n35kuc2gqr" path="res://scripts/damage_zone.gd" id="1_rg5yr"]
+[ext_resource type="AudioStream" uid="uid://brcsyir84m0o" path="res://assets/sounds/hurt.wav" id="2_8p8ol"]
 
 [node name="DamageZone" type="Area2D" unique_id=1607984370]
 collision_layer = 16
 script = ExtResource("1_rg5yr")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1958116620]
+stream = ExtResource("2_8p8ol")
+volume_db = -19.5
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

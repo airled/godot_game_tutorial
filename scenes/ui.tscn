@@ -6,6 +6,10 @@
 atlas = ExtResource("1_nt7q6")
 region = Rect2(16.999363, 49.014633, 30.040928, 7.8082886)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_nt7q6"]
+atlas = ExtResource("1_nt7q6")
+region = Rect2(16.80824, 0, 30.412477, 9.004827)
+
 [node name="UI" type="CanvasLayer" unique_id=1164685464]
 
 [node name="Coins" type="Label" parent="." unique_id=1275673658]
@@ -33,3 +37,15 @@ texture_filter = 1
 position = Vector2(425, 21)
 scale = Vector2(2.0333333, 1)
 texture = SubResource("AtlasTexture_cs4l5")
+
+[node name="Level" type="Label" parent="." unique_id=1308439801]
+offset_left = 363.0
+offset_top = 21.0
+offset_right = 421.0
+offset_bottom = 44.0
+text = "Level: 1"
+
+[node name="LevelUnderline" type="Sprite2D" parent="Level" unique_id=1051910421]
+position = Vector2(29, 25)
+scale = Vector2(2, 1)
+texture = SubResource("AtlasTexture_nt7q6")

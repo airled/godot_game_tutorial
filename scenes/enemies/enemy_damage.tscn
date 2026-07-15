@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://tuv27bqmm1bd"]
 
 [ext_resource type="Texture2D" uid="uid://c1jff2nvrs14p" path="res://assets/sprites/slime_green.png" id="1_7p1mj"]
-[ext_resource type="PackedScene" uid="uid://bqgp0k4cggj1i" path="res://scenes/damage_zone.tscn" id="2_8d6nc"]
+[ext_resource type="PackedScene" uid="uid://bqgp0k4cggj1i" path="res://scenes/zones/damage_zone.tscn" id="2_8d6nc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7p1mj"]
 atlas = ExtResource("1_7p1mj")

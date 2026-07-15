@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dupwsxy5vef56"]
+
+[ext_resource type="Texture2D" uid="uid://b2pfgci6cj1lq" path="res://assets/sprites/platforms.png" id="1_ba0x2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cs4l5"]
+atlas = ExtResource("1_ba0x2")
+region = Rect2(16.871407, 0.9927192, 30.21542, 7.036224)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cs4l5"]
+size = Vector2(30, 7)
+
+[node name="VerticalPlatform" type="AnimatableBody2D" unique_id=1935660023]
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1275922074]
+texture = SubResource("AtlasTexture_cs4l5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1290864840]
+shape = SubResource("RectangleShape2D_cs4l5")
+one_way_collision = true

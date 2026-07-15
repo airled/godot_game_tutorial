@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://do1n84j5hmhs2"]
+
+[ext_resource type="Script" uid="uid://k88btx4gdksn" path="res://scripts/bottle.gd" id="1_yvtr8"]
+[ext_resource type="Texture2D" uid="uid://bptwfapq0sob4" path="res://assets/sprites/world_tileset.png" id="2_yvtr8"]
+[ext_resource type="AudioStream" uid="uid://bv43nsocnd4mo" path="res://assets/sounds/power_up.wav" id="3_emwc0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dj4wq"]
+atlas = ExtResource("2_yvtr8")
+region = Rect2(19.97171, 114.005806, 8.137833, 14.212547)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k0mew"]
+size = Vector2(8, 14)
+
+[node name="Bottle" type="Area2D" unique_id=1843848456]
+collision_layer = 4
+script = ExtResource("1_yvtr8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=550698434]
+texture = SubResource("AtlasTexture_dj4wq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=747691567]
+shape = SubResource("RectangleShape2D_k0mew")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1348449773]
+stream = ExtResource("3_emwc0")
+volume_db = -19.5
+
+[node name="BottleRemoveTimer" type="Timer" parent="." unique_id=1136203742]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="BottleRemoveTimer" to="." method="_on_bottle_remove_timer_timeout"]
