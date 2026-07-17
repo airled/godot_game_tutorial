@@ -394,7 +394,45 @@ _data = {
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cs4l5"]
 
-[node name="Level2" type="Node" unique_id=1260993816]
+[sub_resource type="Animation" id="Animation_oyk6k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gycjm"]
+resource_name = "new_animation"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8i1lk"]
+_data = {
+&"RESET": SubResource("Animation_oyk6k"),
+&"new_animation": SubResource("Animation_gycjm")
+}
+
+[node name="Level2" type="Node2D" unique_id=214704896]
+modulate = Color(1, 1, 1, 0)
 
 [node name="BG" type="TileMapLayer" parent="." unique_id=1405713326]
 position = Vector2(-295, 32)
@@ -453,3 +491,7 @@ shape = SubResource("WorldBoundaryShape2D_cs4l5")
 
 [node name="CharacterBody2D" parent="." unique_id=595772436 instance=ExtResource("7_56gwk")]
 position = Vector2(-168, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1569068555]
+libraries/ = SubResource("AnimationLibrary_8i1lk")
+autoplay = &"new_animation"
