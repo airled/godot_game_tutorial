@@ -10,7 +10,7 @@ region = Rect2(129.04631, 66.41008, 14.112061, 13.691986)
 [sub_resource type="CircleShape2D" id="CircleShape2D_cs4l5"]
 radius = 7.0
 
-[node name="Finish" type="Area2D" unique_id=310057435]
+[node name="FinishLevel" type="Area2D" unique_id=310057435]
 collision_layer = 2
 script = ExtResource("1_07gpw")
 

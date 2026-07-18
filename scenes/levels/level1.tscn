@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://do1n84j5hmhs2" path="res://scenes/bottle.tscn" id="5_f31uk"]
 [ext_resource type="PackedScene" uid="uid://tuv27bqmm1bd" path="res://scenes/enemies/enemy_damage.tscn" id="6_gnai3"]
 [ext_resource type="PackedScene" uid="uid://cqvu3r8081b4p" path="res://scenes/enemies/enemy_kill.tscn" id="7_i8kv5"]
-[ext_resource type="PackedScene" uid="uid://cdg0qlehra61a" path="res://scenes/finish.tscn" id="8_bbk5w"]
+[ext_resource type="PackedScene" uid="uid://cdg0qlehra61a" path="res://scenes/finish_level.tscn" id="8_bbk5w"]
 [ext_resource type="PackedScene" uid="uid://bj0v3uuobbywb" path="res://scenes/character.tscn" id="8_dxn3v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yqjtg"]
