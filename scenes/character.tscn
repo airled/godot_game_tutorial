@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://3hjnhc17cnqg" path="res://scripts/character.gd" id="1_pkhve"]
 [ext_resource type="Texture2D" uid="uid://b2783p8j1tyyh" path="res://assets/sprites/knight.png" id="1_wojmw"]
+[ext_resource type="AudioStream" uid="uid://8di476xtiijg" path="res://assets/sounds/jump.wav" id="3_lrhn5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_thp4p"]
 atlas = ExtResource("1_wojmw")
@@ -223,3 +224,7 @@ position_smoothing_enabled = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=365914466]
 position = Vector2(0, -8)
 shape = SubResource("CapsuleShape2D_cs4l5")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1828289960]
+stream = ExtResource("3_lrhn5")
+volume_db = -19.5

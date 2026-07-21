@@ -39,11 +39,13 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		can_double_jump = true
 		velocity.y = JUMP_VELOCITY
+		$AudioStreamPlayer2D.play()
 
 	if Input.is_action_just_pressed("jump") and !is_on_floor() and velocity.y < 200:
 		if can_double_jump:
 			velocity.y = JUMP_VELOCITY
 			can_double_jump = false
+			$AudioStreamPlayer2D.play()
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
