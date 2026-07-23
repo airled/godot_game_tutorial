@@ -4,11 +4,11 @@ extends Node
 
 var coins = 0
 var health = 100
-var current_level_number = 1
+var current_level_number = 0
 var current_level
 
 func _ready() -> void:
-	_load_level(1)
+	_load_level(current_level_number)
 
 func load_next_level():
 	var next_level_number = current_level_number + 1
