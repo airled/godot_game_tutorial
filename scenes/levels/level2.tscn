@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dsmwtg4k3ot0j" path="res://scenes/platforms/horizontal.tscn" id="6_ok6xr"]
 [ext_resource type="PackedScene" uid="uid://bj0v3uuobbywb" path="res://scenes/character.tscn" id="7_56gwk"]
 [ext_resource type="PackedScene" uid="uid://b657s3oxvacrp" path="res://scenes/finish_game.tscn" id="7_dj4wq"]
+[ext_resource type="PackedScene" uid="uid://b50hl4hrrdr6y" path="res://scenes/level_ease_in.tscn" id="8_k0mew"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e0cvd"]
 texture = ExtResource("1_6ep0u")
@@ -395,43 +396,6 @@ _data = {
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cs4l5"]
 
-[sub_resource type="Animation" id="Animation_oyk6k"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_gycjm"]
-resource_name = "new_animation"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_8i1lk"]
-_data = {
-&"RESET": SubResource("Animation_oyk6k"),
-&"new_animation": SubResource("Animation_gycjm")
-}
-
 [node name="Level2" type="Node2D" unique_id=214704896]
 modulate = Color(1, 1, 1, 0)
 
@@ -444,7 +408,7 @@ tile_set = SubResource("TileSet_iowxr")
 tile_map_data = PackedByteArray("AADz/wAAAAAAAAAAAAD0/wAAAAAAAAAAAAD1/wAAAAAAAAAAAAD2/wAAAAAAAAAAAAD3/wAAAAAAAAAAAAD4/wAAAAAAAAAAAAACAPf/AAAAAAAAAAADAPf/AAAAAAAAAAAEAPf/AAAAAAAAAAAFAPf/AAAAAAAAAAAGAPf/AAAAAAAAAAAHAPf/AAAAAAAAAAAIAPf/AAAAAAAAAAAJAPf/AAAAAAAAAAAGAP//AAAAAAAAAAAWAPX/AAAAAAAAAAAXAPX/AAAAAAAAAAAYAPX/AAAAAAAAAAAZAPX/AAAAAAAAAAAaAPX/AAAAAAAAAAAbAPX/AAAAAAAAAAAcAPX/AAAAAAAAAAAdAPX/AAAJAAAAAAAeAPX/AAAKAAAAAAAfAPX/AAALAAAAAAAgAPX/AAAAAAAAAAAhAPX/AAAAAAAAAAAkAPP/AAAAAAAAAAAlAPP/AAAAAAAAAAAgAPD/AAAAAAAAAAAhAPD/AAAAAAAAAAAiAPD/AAAAAAAAAAAkAO3/AAAAAAAAAAAlAO3/AAAAAAAAAAAmAO3/AAAAAAAAAAAmAPP/AAAAAAAAAAAiAOr/AAAAAAAAAAAhAOr/AAAAAAAAAAAgAOr/AAAAAAAAAAAkAOf/AAAAAAAAAAAlAOf/AAAAAAAAAAAmAOf/AAAAAAAAAAA=")
 tile_set = SubResource("TileSet_w7tjb")
 
-[node name="Platforms" type="Node" parent="." unique_id=889011276]
+[node name="Platforms" type="Node2D" parent="." unique_id=150099760]
 
 [node name="Platform" parent="Platforms" unique_id=1935660023 instance=ExtResource("4_niitk")]
 position = Vector2(-84, -8)
@@ -467,7 +431,7 @@ position = Vector2(221, -139)
 libraries/ = SubResource("AnimationLibrary_oyk6k")
 autoplay = &"new_animation"
 
-[node name="Coins" type="Node" parent="." unique_id=1454985637]
+[node name="Coins" type="Node2D" parent="." unique_id=1952759192]
 
 [node name="Coin7" parent="Coins" unique_id=512411785 instance=ExtResource("5_d5djh")]
 position = Vector2(520, -352)
@@ -499,9 +463,7 @@ shape = SubResource("WorldBoundaryShape2D_cs4l5")
 [node name="CharacterBody2D" parent="." unique_id=595772436 instance=ExtResource("7_56gwk")]
 position = Vector2(-168, 0)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1569068555]
-libraries/ = SubResource("AnimationLibrary_8i1lk")
-autoplay = &"new_animation"
-
 [node name="FinishGame" parent="." unique_id=1853672884 instance=ExtResource("7_dj4wq")]
 position = Vector2(616, -407)
+
+[node name="LevelEaseIn" parent="." unique_id=1116240592 instance=ExtResource("8_k0mew")]

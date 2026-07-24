@@ -341,7 +341,7 @@ position = Vector2(0, 168)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pit" unique_id=398217514]
 shape = SubResource("WorldBoundaryShape2D_cs4l5")
 
-[node name="Coins" type="Node" parent="." unique_id=903358632]
+[node name="Coins" type="Node2D" parent="." unique_id=605606843]
 
 [node name="coin" parent="Coins" unique_id=755387068 instance=ExtResource("4_2ku1j")]
 position = Vector2(-616, 0)
@@ -361,12 +361,12 @@ position = Vector2(160, -80)
 [node name="coin8" parent="Coins" unique_id=1139317306 instance=ExtResource("4_2ku1j")]
 position = Vector2(664, -128)
 
-[node name="HP" type="Node" parent="." unique_id=1231513286]
+[node name="HP" type="Node2D" parent="." unique_id=1856659317]
 
 [node name="Bottle" parent="HP" unique_id=1843848456 instance=ExtResource("5_f31uk")]
 position = Vector2(-216, -54)
 
-[node name="Enemies" type="Node" parent="." unique_id=2019412067]
+[node name="Enemies" type="Node2D" parent="." unique_id=1233070774]
 
 [node name="first_enemy" parent="Enemies" unique_id=59492022 instance=ExtResource("6_gnai3")]
 position = Vector2(-568, 0)
