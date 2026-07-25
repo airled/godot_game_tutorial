@@ -104,6 +104,7 @@ collision_layer = 8
 script = ExtResource("1_i64fm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1340936664]
+texture_filter = 1
 position = Vector2(0, -5)
 sprite_frames = SubResource("SpriteFrames_cs4l5")
 autoplay = "default"

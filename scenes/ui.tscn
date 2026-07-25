@@ -46,6 +46,7 @@ offset_bottom = 44.0
 text = "Level: 1"
 
 [node name="LevelUnderline" type="Sprite2D" parent="Level" unique_id=1051910421]
+texture_filter = 1
 position = Vector2(29, 25)
 scale = Vector2(2, 1)
 texture = SubResource("AtlasTexture_nt7q6")

@@ -14,6 +14,7 @@ size = Vector2(13, 14)
 script = ExtResource("1_gn7qg")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1025837000]
+texture_filter = 1
 texture = SubResource("AtlasTexture_cs4l5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1286429499]

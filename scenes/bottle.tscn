@@ -16,6 +16,7 @@ collision_layer = 4
 script = ExtResource("1_yvtr8")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=550698434]
+texture_filter = 1
 texture = SubResource("AtlasTexture_dj4wq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=747691567]

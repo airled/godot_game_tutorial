@@ -211,6 +211,7 @@ collision_mask = 126
 script = ExtResource("1_pkhve")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1689510766]
+texture_filter = 1
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_iowxr")
 animation = &"run"

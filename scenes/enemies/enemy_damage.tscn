@@ -49,6 +49,7 @@ size = Vector2(14, 11)
 collision_layer = 64
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1511181131]
+texture_filter = 1
 position = Vector2(0, -9)
 sprite_frames = SubResource("SpriteFrames_cs4l5")
 animation = &"idle"

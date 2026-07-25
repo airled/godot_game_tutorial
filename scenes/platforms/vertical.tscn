@@ -13,6 +13,7 @@ size = Vector2(30, 7)
 collision_layer = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1275922074]
+texture_filter = 1
 texture = SubResource("AtlasTexture_cs4l5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1290864840]
